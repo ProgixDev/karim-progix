@@ -87,18 +87,19 @@ export function BodySections() {
           <SectionHeader
             num="03 — INVESTISSEMENT"
             title="Votre investissement"
-            lead="Un forfait fixe, tout compris jusqu’à la mise en marché — voici ce qu’il couvre."
+            lead="Décomposition transparente, poste par poste. Un forfait fixe, tout compris jusqu’à la mise en marché."
           />
           <div className={styles.tableWrap}>
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>Ce que couvre le forfait</th>
+                  <th>Composante de la prestation</th>
+                  <th className={styles.thRight}>Montant</th>
                 </tr>
               </thead>
               <tbody>
                 {investment.map((row, idx) => (
-                  <tr key={idx} className={idx % 2 === 1 ? styles.tableAlt : undefined}>
+                  <tr key={idx} className={row.alt ? styles.tableAlt : undefined}>
                     <td>
                       {"strong" in row && row.strong ? (
                         <>
@@ -109,8 +110,22 @@ export function BodySections() {
                         row.text
                       )}
                     </td>
+                    <td
+                      className={cn(
+                        styles.tableNum,
+                        "included" in row && row.included && styles.tableIncluded,
+                      )}
+                    >
+                      {row.amount}
+                    </td>
                   </tr>
                 ))}
+                <tr className={styles.tableTotal}>
+                  <td>
+                    <strong>Total — forfait, tout compris</strong>
+                  </td>
+                  <td className={styles.tableTotalAmount}>5 200 €</td>
+                </tr>
               </tbody>
             </table>
           </div>

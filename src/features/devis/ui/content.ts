@@ -59,19 +59,33 @@ export const incl3 = [
   { b: "Support technique 90 jours", t: " + documentation technique complète" },
 ] as const;
 
-/** Section 03 — components covered by the fixed-price package. The devis
- * states a single all-inclusive total, with no per-line pricing. */
+/** Section 03 — investment table, poste par poste. `alt` rows get the tinted
+ * background; the priced lines sum to the 5 200 € all-inclusive total. */
 export const investment = [
-  { strong: "Application mobile iOS + Android", text: " (design sur mesure)" },
-  { text: "Inscription, profils vérifiés & gestion des rôles" },
-  { text: "Publication de missions, matching & calendrier" },
-  { text: "Candidature, confirmation, messagerie & évaluations" },
-  { text: "Back-office d’administration & gestion de contenu" },
-  { text: "Intégration de l’abonnement / monétisation in-app" },
-  { text: "Landing page de présentation" },
-  { text: "Publication App Store + Play Store" },
-  { text: "Accompagnement marketing 90 j (formation, scripts, suivi)" },
-  { text: "Hébergement cloud (mise en place) & support 90 jours" },
+  {
+    strong: "Application mobile iOS + Android",
+    text: " (design sur mesure)",
+    amount: "1 650 €",
+    alt: false,
+  },
+  { text: "Inscription, profils vérifiés & gestion des rôles", amount: "500 €", alt: true },
+  { text: "Publication de missions, matching & calendrier", amount: "650 €", alt: false },
+  { text: "Candidature, confirmation, messagerie & évaluations", amount: "550 €", alt: true },
+  { text: "Back-office d’administration & gestion de contenu", amount: "600 €", alt: false },
+  { text: "Intégration de l’abonnement / monétisation in-app", amount: "350 €", alt: true },
+  { text: "Landing page de présentation", amount: "250 €", alt: false },
+  { text: "Publication App Store + Play Store", amount: "150 €", alt: true },
+  {
+    text: "Accompagnement marketing 90 j (formation, scripts, suivi)",
+    amount: "500 €",
+    alt: false,
+  },
+  {
+    text: "Hébergement cloud (mise en place) & support 90 jours",
+    amount: "Inclus",
+    included: true,
+    alt: true,
+  },
 ] as const;
 
 export const payments = [
