@@ -98,10 +98,15 @@ const cy = (label: string): Tag => ({
   fg: "var(--cyan-ink)",
   bd: "none",
 });
-const nv = (label: string): Tag => ({ label, bg: "#E9EEF6", fg: "var(--navy)", bd: "none" });
+const nv = (label: string): Tag => ({
+  label,
+  bg: "rgba(255,255,255,0.08)",
+  fg: "#cdd9ec",
+  bd: "none",
+});
 const gh = (label: string): Tag => ({
   label,
-  bg: "#fff",
+  bg: "rgba(255,255,255,0.05)",
   fg: "var(--muted)",
   bd: "1px solid var(--line)",
 });
@@ -236,21 +241,21 @@ const miles: ReadonlyArray<Mile> = [
     nm: "Au démarrage",
     when: "À la signature et au lancement du Sprint 1",
     amt: "1 560 €",
-    trig: "↗ Déclenche le cadrage",
+    trig: "Déclenche le cadrage",
   },
   {
     pct: "40 % · LIVRAISON",
     nm: "À la publication",
     when: "En fin de Sprint 6, application publiée sur les stores",
     amt: "2 080 €",
-    trig: "↗ À la livraison",
+    trig: "À la livraison",
   },
   {
     pct: "30 % · LANCEMENT",
     nm: "Après accompagnement",
     when: "À l’issue de la formation marketing",
     amt: "1 560 €",
-    trig: "↗ Solde final",
+    trig: "Solde final",
   },
 ];
 
@@ -313,14 +318,14 @@ export function CalendrierDocument() {
               {stats.map((t) => (
                 <div
                   key={t.l}
-                  style={{ background: "#fff", padding: "20px 16px", textAlign: "center" }}
+                  style={{ background: "var(--card)", padding: "20px 16px", textAlign: "center" }}
                 >
                   <div
                     style={{
                       fontFamily: dispFont,
                       fontWeight: 700,
                       fontSize: "28px",
-                      color: "var(--navy)",
+                      color: "#fff",
                       letterSpacing: "-.02em",
                     }}
                   >
@@ -346,7 +351,7 @@ export function CalendrierDocument() {
               style={{
                 fontFamily: dispFont,
                 fontSize: "18px",
-                color: "var(--navy)",
+                color: "#fff",
                 fontWeight: 600,
                 margin: "30px 0 12px",
                 display: "flex",
@@ -412,7 +417,7 @@ export function CalendrierDocument() {
                           fontFamily: dispFont,
                           fontWeight: 600,
                           fontSize: "12.5px",
-                          color: "var(--navy)",
+                          color: "#fff",
                           lineHeight: 1.25,
                         }}
                       >
@@ -425,7 +430,7 @@ export function CalendrierDocument() {
                         position: "relative",
                         flex: 1,
                         height: "30px",
-                        background: "#fff",
+                        background: "var(--card)",
                         borderRadius: "7px",
                         border: "1px solid var(--line)",
                       }}
@@ -528,7 +533,7 @@ export function CalendrierDocument() {
             <div
               style={{
                 background: "var(--tint-2)",
-                border: "1px solid #D5EAFB",
+                border: "1px solid rgba(56,182,255,0.22)",
                 borderRadius: "14px",
                 padding: "18px 22px",
                 margin: "16px 0",
@@ -561,7 +566,7 @@ export function CalendrierDocument() {
                     fontFamily: dispFont,
                     fontSize: "14px",
                     margin: "0 0 4px",
-                    color: "var(--navy)",
+                    color: "#fff",
                     fontWeight: 600,
                   }}
                 >
@@ -645,7 +650,7 @@ export function CalendrierDocument() {
                         fontFamily: dispFont,
                         fontWeight: 600,
                         fontSize: "17px",
-                        color: "var(--navy)",
+                        color: "#fff",
                       }}
                     >
                       {s.phaseTitle}
@@ -673,7 +678,7 @@ export function CalendrierDocument() {
                     border: "1px solid var(--line)",
                     borderRadius: "14px",
                     margin: "12px 0",
-                    background: "#fff",
+                    background: "var(--card)",
                     boxShadow: "var(--shadow)",
                     overflow: "hidden",
                   }}
@@ -735,7 +740,7 @@ export function CalendrierDocument() {
                         fontFamily: dispFont,
                         fontWeight: 600,
                         fontSize: "16px",
-                        color: "var(--navy)",
+                        color: "#fff",
                         marginBottom: "10px",
                       }}
                     >
@@ -822,7 +827,7 @@ export function CalendrierDocument() {
             <div
               style={{
                 background: "var(--ok-bg)",
-                border: "1px solid #C7EBD9",
+                border: "1px solid rgba(52,226,192,0.25)",
                 borderRadius: "14px",
                 padding: "18px 22px",
                 margin: "16px 0",
@@ -847,7 +852,7 @@ export function CalendrierDocument() {
                   background: "var(--ok)",
                 }}
               >
-                ↗
+                —
               </div>
               <div>
                 <h4
@@ -855,7 +860,7 @@ export function CalendrierDocument() {
                     fontFamily: dispFont,
                     fontSize: "14px",
                     margin: "0 0 4px",
-                    color: "#0B6E4B",
+                    color: "#7ef0d2",
                     fontWeight: 600,
                   }}
                 >
@@ -915,7 +920,7 @@ export function CalendrierDocument() {
                     border: "1px solid var(--line)",
                     borderRadius: "14px",
                     padding: "18px 18px",
-                    background: "#fff",
+                    background: "var(--card)",
                     boxShadow: "var(--shadow)",
                     transition: "transform .25s ease,box-shadow .3s ease,border-color .25s ease",
                   }}
@@ -935,7 +940,7 @@ export function CalendrierDocument() {
                       fontFamily: dispFont,
                       fontWeight: 600,
                       fontSize: "14px",
-                      color: "var(--navy)",
+                      color: "#fff",
                       margin: "7px 0 3px",
                     }}
                   >
@@ -956,7 +961,7 @@ export function CalendrierDocument() {
                       fontFamily: dispFont,
                       fontWeight: 700,
                       fontSize: "24px",
-                      color: "var(--navy)",
+                      color: "#fff",
                       marginTop: "8px",
                       borderTop: "1px solid var(--line)",
                       paddingTop: "10px",
@@ -980,7 +985,7 @@ export function CalendrierDocument() {
             <div
               style={{
                 background: "var(--tint-2)",
-                border: "1px solid #D5EAFB",
+                border: "1px solid rgba(56,182,255,0.22)",
                 borderRadius: "14px",
                 padding: "18px 22px",
                 margin: "16px 0",
@@ -1013,7 +1018,7 @@ export function CalendrierDocument() {
                     fontFamily: dispFont,
                     fontSize: "14px",
                     margin: "0 0 4px",
-                    color: "var(--navy)",
+                    color: "#fff",
                     fontWeight: 600,
                   }}
                 >
@@ -1057,7 +1062,7 @@ export function CalendrierDocument() {
               style={{
                 fontFamily: dispFont,
                 fontSize: "18px",
-                color: "var(--navy)",
+                color: "#fff",
                 fontWeight: 600,
                 margin: "14px 0 10px",
                 display: "flex",
@@ -1087,7 +1092,7 @@ export function CalendrierDocument() {
                     fontSize: "12px",
                   }}
                 >
-                  ↗
+                  —
                 </span>
                 Sprints d’environ{" "}
                 <b style={{ color: "var(--ink)", fontWeight: 600 }}>une semaine</b>, avec une{" "}
@@ -1113,7 +1118,7 @@ export function CalendrierDocument() {
                     fontSize: "12px",
                   }}
                 >
-                  ↗
+                  —
                 </span>
                 <b style={{ color: "var(--ink)", fontWeight: 600 }}>
                   Point d’avancement hebdomadaire
@@ -1139,7 +1144,7 @@ export function CalendrierDocument() {
                     fontSize: "12px",
                   }}
                 >
-                  ↗
+                  —
                 </span>
                 Développement <b style={{ color: "var(--ink)", fontWeight: 600 }}>itératif</b> :
                 chaque sprint livre un incrément testable.
@@ -1149,7 +1154,7 @@ export function CalendrierDocument() {
               style={{
                 fontFamily: dispFont,
                 fontSize: "18px",
-                color: "var(--navy)",
+                color: "#fff",
                 fontWeight: 600,
                 margin: "30px 0 10px",
                 display: "flex",
@@ -1179,7 +1184,7 @@ export function CalendrierDocument() {
                     fontSize: "12px",
                   }}
                 >
-                  ↗
+                  —
                 </span>
                 Validation du Client à chaque{" "}
                 <b style={{ color: "var(--ink)", fontWeight: 600 }}>fin de phase clé</b> (design,
@@ -1204,7 +1209,7 @@ export function CalendrierDocument() {
                     fontSize: "12px",
                   }}
                 >
-                  ↗
+                  —
                 </span>
                 Les{" "}
                 <b style={{ color: "var(--ink)", fontWeight: 600 }}>retards imputables au Client</b>{" "}
@@ -1230,7 +1235,7 @@ export function CalendrierDocument() {
                     fontSize: "12px",
                   }}
                 >
-                  ↗
+                  —
                 </span>
                 Toute modification du périmètre fait l’objet d’un accord écrit (voir{" "}
                 <a
@@ -1252,7 +1257,7 @@ export function CalendrierDocument() {
             <div
               style={{
                 background: "var(--amber-bg)",
-                border: "1px solid #F3DFBC",
+                border: "1px solid rgba(232,161,58,0.3)",
                 borderRadius: "14px",
                 padding: "18px 22px",
                 margin: "16px 0",
@@ -1285,7 +1290,7 @@ export function CalendrierDocument() {
                     fontFamily: dispFont,
                     fontSize: "14px",
                     margin: "0 0 4px",
-                    color: "#8A5A12",
+                    color: "#f0c98a",
                     fontWeight: 600,
                   }}
                 >

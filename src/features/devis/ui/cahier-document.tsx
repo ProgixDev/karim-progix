@@ -23,8 +23,8 @@ const CONTAINER: CSSProperties = {
 };
 
 const CARD: CSSProperties = {
-  background: "linear-gradient(180deg,#fff,#EDF4FF)",
-  border: "1px solid #D6E3F1",
+  background: "var(--card-grad)",
+  border: "1px solid var(--card-bd)",
   borderRadius: "14px",
   padding: "22px 24px",
   boxShadow: "var(--shadow)",
@@ -33,7 +33,7 @@ const CARD: CSSProperties = {
 const CARD_TITLE: CSSProperties = {
   fontFamily: "var(--font-disp)",
   fontSize: "15px",
-  color: "var(--navy)",
+  color: "#fff",
   fontWeight: 600,
   margin: "0 0 7px",
   display: "flex",
@@ -71,7 +71,7 @@ const GRID_AUTO: CSSProperties = {
 const H3_DIAMOND: CSSProperties = {
   fontFamily: "var(--font-disp)",
   fontSize: "19px",
-  color: "var(--navy)",
+  color: "#fff",
   fontWeight: 600,
   margin: "34px 0 12px",
   display: "flex",
@@ -81,7 +81,7 @@ const H3_DIAMOND: CSSProperties = {
 
 const INFOBOX: CSSProperties = {
   background: "var(--tint-2)",
-  border: "1px solid #D5EAFB",
+  border: "1px solid rgba(56,182,255,0.22)",
   borderRadius: "14px",
   padding: "18px 22px",
   margin: "16px 0",
@@ -109,7 +109,7 @@ const INFOBOX_TITLE: CSSProperties = {
   fontFamily: "var(--font-disp)",
   fontSize: "14px",
   margin: "0 0 4px",
-  color: "var(--navy)",
+  color: "#fff",
   fontWeight: 600,
 };
 
@@ -149,8 +149,8 @@ const TAG_BASE: CSSProperties = {
 
 const STEP_CARD: CSSProperties = {
   flex: "1 1 180px",
-  background: "linear-gradient(180deg,#fff,#EDF4FF)",
-  border: "1px solid #D6E3F1",
+  background: "var(--card-grad)",
+  border: "1px solid var(--card-bd)",
   borderRadius: "14px",
   padding: "16px 14px",
   boxShadow: "var(--shadow)",
@@ -168,7 +168,7 @@ const STEP_TITLE: CSSProperties = {
   fontFamily: "var(--font-disp)",
   fontWeight: 600,
   fontSize: "14px",
-  color: "var(--navy)",
+  color: "#fff",
   margin: "6px 0 4px",
 };
 
@@ -186,7 +186,7 @@ const STEP_RULE: CSSProperties = {
 };
 
 const ARCH_NODE: CSSProperties = {
-  background: "#fff",
+  background: "var(--card)",
   border: "1.5px solid var(--line)",
   borderRadius: "11px",
   padding: "12px 14px",
@@ -199,7 +199,7 @@ const ARCH_NODE_TITLE: CSSProperties = {
   fontFamily: "var(--font-disp)",
   fontWeight: 600,
   fontSize: "12.5px",
-  color: "var(--navy)",
+  color: "#fff",
 };
 
 const ARCH_NODE_SUB: CSSProperties = {
@@ -283,8 +283,8 @@ function InfoCallout({
   iconBg = "var(--cyan)",
   icon = "i",
   title,
-  titleColor = "var(--navy)",
-  borderColor = "#D5EAFB",
+  titleColor = "#fff",
+  borderColor = "rgba(56,182,255,0.22)",
   background = "var(--tint-2)",
   children,
 }: {
@@ -350,10 +350,15 @@ const cy = (label: string): Tag => ({
   fg: "var(--cyan-ink)",
   bd: "none",
 });
-const nv = (label: string): Tag => ({ label, bg: "#E9EEF6", fg: "var(--navy)", bd: "none" });
+const nv = (label: string): Tag => ({
+  label,
+  bg: "rgba(255,255,255,0.08)",
+  fg: "#cdd9ec",
+  bd: "none",
+});
 const gh = (label: string): Tag => ({
   label,
-  bg: "#fff",
+  bg: "rgba(255,255,255,0.05)",
   fg: "var(--muted)",
   bd: "1px solid var(--line)",
 });
@@ -548,7 +553,7 @@ export function CahierDocument() {
               style={{
                 fontFamily: "var(--font-disp)",
                 fontSize: "clamp(23px,3vw,28px)",
-                color: "var(--navy)",
+                color: "#fff",
                 fontWeight: 600,
                 letterSpacing: "-.01em",
                 margin: "12px 0 0",
@@ -597,7 +602,7 @@ export function CahierDocument() {
                     style={{
                       fontFamily: "var(--font-disp)",
                       fontWeight: 500,
-                      color: "var(--navy)",
+                      color: "#fff",
                       fontSize: "15px",
                     }}
                   >
@@ -620,7 +625,7 @@ export function CahierDocument() {
                     }}
                     aria-hidden="true"
                   >
-                    ↗
+                    —
                   </span>
                 </div>
               ))}
@@ -649,9 +654,10 @@ export function CahierDocument() {
               }}
             >
               RotaPro est une <Strong>plateforme de mise en relation</Strong> qui connecte les
-              professionnels ayant besoin d’un remplaçant avec des <Strong>remplaçants qualifiés et
-              disponibles</Strong>, à travers plusieurs domaines d’activité — à la manière d’un
-              « Doctolib du remplacement », ouvert à plusieurs secteurs.
+              professionnels ayant besoin d’un remplaçant avec des{" "}
+              <Strong>remplaçants qualifiés et disponibles</Strong>, à travers plusieurs domaines
+              d’activité — à la manière d’un « Doctolib du remplacement », ouvert à plusieurs
+              secteurs.
             </p>
             <DiamondHeading>Positionnement</DiamondHeading>
             <p
@@ -662,10 +668,11 @@ export function CahierDocument() {
                 lineHeight: 1.62,
               }}
             >
-              RotaPro se concentre sur un besoin précis et transversal : le <Strong>remplacement
-              professionnel rotatif</Strong>. Là où les plateformes d’emploi classiques gèrent du
-              recrutement long terme, RotaPro gère la mise en relation rapide et récurrente entre un
-              titulaire et son remplaçant, la confiance et la qualification au cœur de l’expérience.
+              RotaPro se concentre sur un besoin précis et transversal : le{" "}
+              <Strong>remplacement professionnel rotatif</Strong>. Là où les plateformes d’emploi
+              classiques gèrent du recrutement long terme, RotaPro gère la mise en relation rapide
+              et récurrente entre un titulaire et son remplaçant, la confiance et la qualification
+              au cœur de l’expérience.
             </p>
             <div
               style={{
@@ -692,7 +699,7 @@ export function CahierDocument() {
                   lineHeight: 1,
                 }}
               >
-                ↗
+                —
               </span>
               <span
                 style={{
@@ -856,16 +863,16 @@ export function CahierDocument() {
                 secondes, en précisant domaine, dates et conditions.
               </FeatureCard>
               <FeatureCard icon="2" iconBg="var(--navy)" title="Trouver & accepter des missions">
-                Permettre à un remplaçant de trouver et d’accepter des missions correspondant à
-                son profil et à sa disponibilité.
+                Permettre à un remplaçant de trouver et d’accepter des missions correspondant à son
+                profil et à sa disponibilité.
               </FeatureCard>
               <FeatureCard icon="3" iconBg="var(--cyan)" title="Garantir la confiance">
                 Sécuriser la mise en relation via la vérification des profils et un système
                 d’évaluation mutuelle.
               </FeatureCard>
               <FeatureCard icon="4" iconBg="var(--navy)" title="Couvrir plusieurs domaines">
-                Adresser plusieurs domaines professionnels (santé, restauration, commerce…)
-                avec une logique de catégories.
+                Adresser plusieurs domaines professionnels (santé, restauration, commerce…) avec une
+                logique de catégories.
               </FeatureCard>
             </div>
             <InfoCallout title="Objectif de déploiement">
@@ -935,8 +942,8 @@ export function CahierDocument() {
               <div
                 key={m.n}
                 style={{
-                  background: "linear-gradient(180deg,#fff,#EDF4FF)",
-                  border: "1px solid #D6E3F1",
+                  background: "var(--card-grad)",
+                  border: "1px solid var(--card-bd)",
                   borderRadius: "14px",
                   margin: "16px 0",
                   boxShadow: "var(--shadow)",
@@ -976,7 +983,7 @@ export function CahierDocument() {
                       style={{
                         fontFamily: "var(--font-disp)",
                         fontSize: "16px",
-                        color: "var(--navy)",
+                        color: "#fff",
                         fontWeight: 600,
                         margin: "2px 0 3px",
                         display: "flex",
@@ -1176,11 +1183,11 @@ export function CahierDocument() {
               </table>
             </div>
             <InfoCallout title="Périmètre de la première version">
-              Le présent cahier des charges définit le périmètre d’un <Strong>MVP solide et
-              complet</Strong> couvrant le cœur de la mise en relation. Les fonctionnalités avancées
-              (paiement en ligne intégré, modules sectoriels spécifiques, fonctionnalités
-              additionnelles) pourront faire l’objet d’évolutions ultérieures, affinées
-              conjointement au fil du projet et de la croissance de la base d’utilisateurs.
+              Le présent cahier des charges définit le périmètre d’un{" "}
+              <Strong>MVP solide et complet</Strong> couvrant le cœur de la mise en relation. Les
+              fonctionnalités avancées (paiement en ligne intégré, modules sectoriels spécifiques,
+              fonctionnalités additionnelles) pourront faire l’objet d’évolutions ultérieures,
+              affinées conjointement au fil du projet et de la croissance de la base d’utilisateurs.
             </InfoCallout>
           </div>
         </section>
@@ -1195,8 +1202,8 @@ export function CahierDocument() {
             <SectionHeader num="07 — LIVRABLES" title="Livrables & accompagnement" />
             <div
               style={{
-                background: "linear-gradient(180deg,#fff,#EDF4FF)",
-                border: "1px solid #D6E3F1",
+                background: "var(--card-grad)",
+                border: "1px solid var(--card-bd)",
                 borderRadius: "14px",
                 padding: "8px 24px",
                 boxShadow: "var(--shadow)",
@@ -1268,7 +1275,7 @@ export function CahierDocument() {
                         fontFamily: "var(--font-disp)",
                         fontWeight: 600,
                         fontSize: "15px",
-                        color: "var(--navy)",
+                        color: "#fff",
                         marginBottom: "3px",
                       }}
                     >
@@ -1289,8 +1296,8 @@ export function CahierDocument() {
             </div>
             <InfoCallout title="Au-delà du développement">
               Progix accompagne le Client sur la commercialisation de RotaPro, de l’acquisition des
-              premiers utilisateurs jusqu’à l’objectif de <Strong>1 000 utilisateurs actifs</Strong>,
-              en mettant à profit ses process éprouvés sur de nombreuses applications mobiles.
+              premiers utilisateurs jusqu’à l’objectif de <Strong>1 000 utilisateurs actifs</Strong>
+              , en mettant à profit ses process éprouvés sur de nombreuses applications mobiles.
             </InfoCallout>
           </div>
         </section>
@@ -1348,8 +1355,8 @@ function UserCard({
   return (
     <div
       style={{
-        background: "linear-gradient(180deg,#fff,#EDF4FF)",
-        border: "1px solid #D6E3F1",
+        background: "var(--card-grad)",
+        border: "1px solid var(--card-bd)",
         borderRadius: "14px",
         margin: "16px 0",
         boxShadow: "var(--shadow)",
@@ -1389,7 +1396,7 @@ function UserCard({
             style={{
               fontFamily: "var(--font-disp)",
               fontSize: "16px",
-              color: "var(--navy)",
+              color: "#fff",
               fontWeight: 600,
               margin: "2px 0 3px",
             }}
@@ -1469,7 +1476,7 @@ function JourneyHeading({
       style={{
         fontFamily: "var(--font-disp)",
         fontSize: "18px",
-        color: "var(--navy)",
+        color: "#fff",
         fontWeight: 600,
         margin: `${marginTop} 0 12px`,
         display: "flex",

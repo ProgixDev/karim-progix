@@ -37,9 +37,9 @@ export function BodySections() {
           <p className={styles.pLead}>
             Le présent devis contractuel (le « Devis ») définit les modalités selon lesquelles{" "}
             <Strong>Progix Inc.</Strong> (le « Prestataire ») s’engage à concevoir, développer et
-            livrer <Strong>RotaPro</Strong> (l’«
-            Application »), une plateforme mobile de mise en relation pour le remplacement professionnel rotatif, pour le compte du client
-            signataire (le « Client »).
+            livrer <Strong>RotaPro</Strong> (l’« Application »), une plateforme mobile de mise en
+            relation pour le remplacement professionnel rotatif, pour le compte du client signataire
+            (le « Client »).
           </p>
           <p className={styles.p}>
             Il précise les prestations incluses, l’investissement et son échéancier,
@@ -117,7 +117,7 @@ export function BodySections() {
           <div className={cn(styles.totalPanel, styles.lift)}>
             <div className={styles.totalPanelInner}>
               <span className={styles.totalArrow} aria-hidden="true">
-                ↗
+                —
               </span>
               <div className={styles.totalEyebrow}>Montant total · forfait fixe</div>
               <div className={styles.totalValue}>5 200 €</div>
@@ -145,7 +145,9 @@ export function BodySections() {
           </div>
           <p style={{ fontSize: "13px", color: "var(--slate)", margin: 0, lineHeight: 1.6 }}>
             Paiements par <Strong>Stripe</Strong> ou <Strong>virement bancaire</Strong>, en euros.
-            Aucun travail de développement ne débute avant réception de l’acompte. La monétisation de l’Application repose sur un <Strong>système d’abonnement / in-app</Strong>, dont les modalités seront retenues avec le Client.
+            Aucun travail de développement ne débute avant réception de l’acompte. La monétisation
+            de l’Application repose sur un <Strong>système d’abonnement / in-app</Strong>, dont les
+            modalités seront retenues avec le Client.
           </p>
         </div>
       </section>
@@ -179,8 +181,8 @@ export function BodySections() {
                 Scripts publicitaires fournis
               </h3>
               <p className={styles.cardText}>
-                Progix fournit les scripts des vidéos publicitaires (UGC), issus de son
-                playbook interne.
+                Progix fournit les scripts des vidéos publicitaires (UGC), issus de son playbook
+                interne.
               </p>
             </div>
             <div className={cn(styles.card, styles.lift)}>
@@ -203,15 +205,15 @@ export function BodySections() {
                 Optimisation & A/B testing
               </h3>
               <p className={styles.cardText}>
-                Tests de paywalls et A/B testing pour optimiser le coût d’acquisition et
-                le taux de conversion.
+                Tests de paywalls et A/B testing pour optimiser le coût d’acquisition et le taux de
+                conversion.
               </p>
             </div>
           </div>
           <p className={styles.note}>
-            Le Client prévoit un <Strong>budget publicitaire minimum de 2 000 €</Strong> au lancement,
-            réparti entre Meta Ads, Apple Search Ads et la production de vidéos UGC. Ce budget est
-            distinct du montant du présent devis.
+            Le Client prévoit un <Strong>budget publicitaire minimum de 2 000 €</Strong> au
+            lancement, réparti entre Meta Ads, Apple Search Ads et la production de vidéos UGC. Ce
+            budget est distinct du montant du présent devis.
           </p>
         </div>
       </section>
@@ -261,8 +263,9 @@ export function BodySections() {
                 Évolutions & nouvelles fonctionnalités
               </h3>
               <p className={styles.cardText}>
-                <Strong>80 $ / heure</Strong> — pour toute évolution postérieure de l’Application (paiement en ligne intégré,
-                modules sectoriels spécifiques, fonctionnalités additionnelles…).
+                <Strong>80 $ / heure</Strong> — pour toute évolution postérieure de l’Application
+                (paiement en ligne intégré, modules sectoriels spécifiques, fonctionnalités
+                additionnelles…).
               </p>
             </div>
           </div>
@@ -316,7 +319,8 @@ export function BodySections() {
               accompagne la création et publie pour le Client.
             </li>
             <li className={styles.arrowItem}>
-              Créer un compte <Strong>Stripe</Strong> et fournir un accès développeur pour les paiements le cas échéant.
+              Créer un compte <Strong>Stripe</Strong> et fournir un accès développeur pour les
+              paiements le cas échéant.
             </li>
             <li className={styles.arrowItem}>
               Prévoir le <Strong>budget publicitaire minimum</Strong> de 2 000 € pour le lancement.
